@@ -1,6 +1,5 @@
-# test-node-employee
-
-# Run command: npm run start
+# Run command:
+npm run start
 
 # Example post query:
 curl http://localhost:4000/add-todo \
