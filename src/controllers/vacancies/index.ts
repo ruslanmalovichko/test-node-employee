@@ -2,6 +2,15 @@ import { Response, Request } from "express"
 import { IVacancy } from "./../../types/vacancy"
 import Vacancy from "../../models/vacancy"
 
+const getVacancies = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const vacancies: IVacancy[] = await Vacancy.find()
+    res.status(200).json({ vacancies })
+  } catch (error) {
+    throw error
+  }
+}
+
 const addVacancy = async (req: Request, res: Response): Promise<void> => {
   try {
     const body = req.body as Pick<IVacancy, "name" | "description" | "tech_stack" | "requirements">
@@ -24,5 +33,5 @@ const addVacancy = async (req: Request, res: Response): Promise<void> => {
   }
 }
 
-export { addVacancy }
+export { getVacancies, addVacancy }
 
