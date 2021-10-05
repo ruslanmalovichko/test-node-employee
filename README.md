@@ -19,6 +19,14 @@ curl http://localhost:4000/add-user \
   -d '{"name":"Ruslan", "email":"ruslanmalovichko@gmail.com"}'
 ```
 
+# Example post query to add profile employee:
+```
+curl http://localhost:4000/add-profile-employee \
+  -X POST \
+  -H "Content-Type: application/json" \
+  -d '{"status":true, "vacancy":"615c556564bee6247019a779", "user":"615c557864bee6247019a77e"}'
+```
+
 # Example get query to get vacancies:
 ```
 Open in browser: http://localhost:4000/vacancies
@@ -27,6 +35,11 @@ Open in browser: http://localhost:4000/vacancies
 # Example get query to get users:
 ```
 Open in browser: http://localhost:4000/users
+```
+
+# Example get query to get profiles employee:
+```
+Open in browser: http://localhost:4000/profiles-employee
 ```
 
 # Run TypeScript linter:
