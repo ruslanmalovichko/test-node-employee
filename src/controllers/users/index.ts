@@ -1,6 +1,6 @@
-import { Response, Request } from "express"
-import { IUser } from "./../../types/user"
-import User from "../../models/user"
+import { Response, Request } from 'express'
+import { IUser } from './../../types/user'
+import User from '../../models/user'
 
 const getUsers = async (req: Request, res: Response): Promise<void> => {
   try {
@@ -14,7 +14,7 @@ const getUsers = async (req: Request, res: Response): Promise<void> => {
 
 const addUser = async (req: Request, res: Response): Promise<void> => {
   try {
-    const body = req.body as Pick<IUser, "name" | "email">
+    const body = req.body as Pick<IUser, 'name' | 'email'>
     // const body: IUser = req.body
 
     // const {
@@ -28,7 +28,7 @@ const addUser = async (req: Request, res: Response): Promise<void> => {
 
     const user: IUser = new User({
       name: body.name,
-      email: body.email,
+      email: body.email
     })
 
     const newUser: IUser = await user.save()
@@ -36,11 +36,10 @@ const addUser = async (req: Request, res: Response): Promise<void> => {
 
     res
       .status(201)
-      .json({ message: "User added", user: newUser, users: allUsers })
+      .json({ message: 'User added', user: newUser, users: allUsers })
   } catch (error) {
     throw error
   }
 }
 
 export { getUsers, addUser }
-

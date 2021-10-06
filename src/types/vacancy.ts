@@ -1,4 +1,4 @@
-import { Document } from "mongoose"
+import { Document } from 'mongoose'
 
 export interface IVacancy extends Document {
   name: string
@@ -6,4 +6,3 @@ export interface IVacancy extends Document {
   tech_stack: string
   requirements: string
 }
-

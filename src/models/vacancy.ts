@@ -1,30 +1,29 @@
-import { IVacancy } from "./../types/vacancy"
-import { model, Schema } from "mongoose"
+import { IVacancy } from './../types/vacancy'
+import { model, Schema } from 'mongoose'
 
 const vacancySchema: Schema = new Schema(
   {
     name: {
       type: String,
-      required: true,
+      required: true
     },
 
     description: {
       type: String,
-      required: true,
+      required: true
     },
 
     tech_stack: {
       type: String,
-      required: true,
+      required: true
     },
 
     requirements: {
       type: String,
-      required: true,
-    },
+      required: true
+    }
   },
   { timestamps: true }
 )
 
-export default model<IVacancy>("Vacancy", vacancySchema)
-
+export default model<IVacancy>('Vacancy', vacancySchema)
