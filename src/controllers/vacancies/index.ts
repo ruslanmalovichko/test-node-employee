@@ -6,6 +6,7 @@ const getVacancies = async (req: Request, res: Response): Promise<void> => {
   try {
     const vacancies: IVacancy[] = await Vacancy.find()
     res.status(200).json({ vacancies })
+    // res.end(JSON.stringify(vacancies, null, 4));
   } catch (error) {
     throw error
   }

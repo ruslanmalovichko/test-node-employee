@@ -6,6 +6,7 @@ const getUsers = async (req: Request, res: Response): Promise<void> => {
   try {
     const users: IUser[] = await User.find()
     res.status(200).json({ users })
+    // res.end(JSON.stringify(users, null, 4));
   } catch (error) {
     throw error
   }
@@ -14,6 +15,16 @@ const getUsers = async (req: Request, res: Response): Promise<void> => {
 const addUser = async (req: Request, res: Response): Promise<void> => {
   try {
     const body = req.body as Pick<IUser, "name" | "email">
+    // const body: IUser = req.body
+
+    // const {
+    //   name, email, pasword
+    // } = body
+
+    // const user: IUser = new User({
+    //   name,
+    //   email,
+    // })
 
     const user: IUser = new User({
       name: body.name,
