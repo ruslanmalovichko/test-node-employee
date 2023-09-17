@@ -24,7 +24,7 @@ curl http://localhost:4000/add-user \
 curl http://localhost:4000/add-profile-employee \
   -X POST \
   -H "Content-Type: application/json" \
-  -d '{"status":true, "vacancy":"615c556564bee6247019a779", "user":"615c557864bee6247019a77e"}'
+  -d '{"status":true, "vacancy":"615d576c465a5a9f37701875", "user":"615d5791465a5a9f37701879"}'
 ```
 
 # Example get query to get vacancies:
@@ -51,4 +51,6 @@ npx ts-standard
 ```
 npx ts-standard --fix
 ```
+
+http://localhost:4000/profiles-employee&tech_stack=React
 
